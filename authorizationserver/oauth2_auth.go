@@ -37,19 +37,6 @@ func sendEmailLink(to string, url string) {
 }
 
 func handleAuthAndConsent(rw http.ResponseWriter, req *http.Request, ar fosite.AuthorizeRequester) (abort bool, err error) {
-	/*
-		- page to ask user how to authenticate (email?)
-		- generate an email-token
-		- record AuthorizationRequest with email-token
-		- send email with link with email-token
-		- respond with "email sent. wait or click here to resend"
-
-		1. show the page for login method: ""
-		2. show the page "email sent": "login_method=email email_address=poi@poi.poi"
-		3. from email: "login_method=email login_token=QWERTY"
-
-	*/
-
 	req.ParseForm()
 
 	tok := req.Form.Get("login_token")
@@ -87,20 +74,12 @@ func handleAuthAndConsent(rw http.ResponseWriter, req *http.Request, ar fosite.A
 	}
 
 	if loginMethod == "email" {
-
 		tok := requestStore.store(req.Form)
 
 		q := req.Form
 		q.Del("email_address")
 		q.Del("login_method")
 		q.Set("login_token", string(tok))
-
-		// u := &url.URL{
-		// 	Scheme: "http",
-		// 	Host:   req.Host,
-		// 	Path:   req.URL.Path,
-		// }
-		// u.RawQuery = q.Encode()
 
 		u := &url.URL{
 			Scheme: "http",

@@ -20,8 +20,8 @@ var clientConf = goauth.Config{
 	RedirectURL:  "http://localhost:3846/callback",
 	Scopes:       []string{"photos", "openid", "offline"},
 	Endpoint: goauth.Endpoint{
-		TokenURL: "http://localhost:4000/oauth2/token",
-		AuthURL:  "http://localhost:4000/oauth2/auth",
+		TokenURL: "http://localhost:5000/oauth2/token",
+		AuthURL:  "http://localhost:5000/oauth2/auth",
 	},
 }
 
@@ -30,7 +30,7 @@ var appClientConf = clientcredentials.Config{
 	ClientID:     "my-client",
 	ClientSecret: "foobar",
 	Scopes:       []string{"fosite"},
-	TokenURL:     "http://localhost:4000/oauth2/token",
+	TokenURL:     "http://localhost:5000/oauth2/token",
 }
 
 func main() {
