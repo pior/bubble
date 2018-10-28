@@ -4,8 +4,8 @@
 [[projects]]
   name = "github.com/asaskevich/govalidator"
   packages = ["."]
-  revision = "73945b6115bfbbcc57d89b7316e28109364124e1"
-  version = "v7"
+  revision = "ccb8e960c48f04d6935e72476ae4a51028f9e22f"
+  version = "v9"
 
 [[projects]]
   name = "github.com/dgrijalva/jwt-go"
@@ -55,8 +55,8 @@
     "token/hmac",
     "token/jwt"
   ]
-  revision = "2edf8f828b99cbabefa7f00066b49e081fab4920"
-  version = "v0.20.3"
+  revision = "799fc70a48b68b3403eb150084c28d4e78c035e4"
+  version = "v0.26.1"
 
 [[projects]]
   name = "github.com/ory/go-convenience"
@@ -64,8 +64,8 @@
     "stringslice",
     "stringsx"
   ]
-  revision = "c47f601243faea2022b8bc0b90d7e1cd1f722807"
-  version = "v0.0.6"
+  revision = "ab120a447a7fe88a9c3b7cbfca477340b0e88ef3"
+  version = "v0.1.0"
 
 [[projects]]
   name = "github.com/parnurzeal/gorequest"
@@ -96,7 +96,10 @@
   name = "golang.org/x/crypto"
   packages = [
     "bcrypt",
-    "blowfish"
+    "blowfish",
+    "ed25519",
+    "ed25519/internal/edwards25519",
+    "pbkdf2"
   ]
   revision = "e84da0312774c21d64ee2317962ef669b27ffb41"
 
@@ -156,9 +159,19 @@
   revision = "ae0ab99deb4dc413a2b4bd6c8bdd0eb67f1e4d06"
   version = "v1.2.0"
 
+[[projects]]
+  name = "gopkg.in/square/go-jose.v2"
+  packages = [
+    ".",
+    "cipher",
+    "json"
+  ]
+  revision = "ef984e69dd356202fd4e4910d4d9c24468bdf0b8"
+  version = "v2.1.9"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "73e4b5c4397e3fbddd45af26a1da621becb7ac9f552c763dde11b35bd1988361"
+  inputs-digest = "625ae523aa3ad6ababe76c634135bbbccdd53955dc6850477cc01b7002892fb9"
   solver-name = "gps-cdcl"
   solver-version = 1
